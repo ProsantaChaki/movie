@@ -401,7 +401,72 @@
 </div>
 <script src="{{ url('/') }}/js/staticText.js"></script>
 <script src="{{ url('/') }}/js/common.js"></script>
+<script src="{{ url('/') }}/js/pagination.js"></script>
 
 
 </body>
 </html>
+
+<script>
+    serverPostRequest()
+    function serverPostRequest() {
+        var method = 'GET';
+        var url = project_url+'api/v1/all/movie';
+        var request = httpRequest(method, url , '');
+        var data = JSON.parse(request.response);
+        var htmlData = '';
+        for(var i = 0; i<data['data']['data'].length; i++){
+            htmlData = htmlData + htmlPostDataGenerator(data['data']['data'][i])
+        }
+        var pagination = paginationGenarator(data['data'])
+        document.getElementById('posts').innerHTML = htmlData + pagination;
+        //alert(data[0]['data'])
+    }
+
+    function getPostData(url) {
+        url = project_url+'api/v1/all/movie?page='+ url;
+
+        //alert(url)
+        var request = httpRequest('GET', url, '');
+        var data = JSON.parse(request.response);
+        var htmlData = '';
+        for(var i = 0; i<data['data']['data'].length; i++){
+            htmlData = htmlData + htmlPostDataGenerator(data['data']['data'][i])
+        }
+        //alert(htmlData)
+        var pagination = paginationGenarator(data)
+        document.getElementById('posts').innerHTML = htmlData + pagination;
+
+    }
+
+    function htmlPostDataGenerator(data) {
+
+        var html = '<div class="col-md-12 col-sm-12 ftco-animate d-md-flex w3-light-grey" style="margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px" >\n' +
+            '                <div  class="col-xl-4 col-lg-4 col-md-4 col-sm-4 " style="alignment: left">\n' +
+            '                    <a href="#" class="img img-2">\n' +
+            '                        <img src='+project_url+data["photo"] +' style=" max-width: 200px; max-height:170px;">\n' +
+            '                    </a>\n' +
+            '                </div>\n' +
+            '                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8" style="alignment: right;">\n' +
+            '                    <h4 class="mb-2"><a href="'+project_url+'film/'+ data["slug"]["slug"]+'" name="title">'+ data["name"]+'</a></h4>\n' +
+            '                    <div class="text text-2 pl-md-4">\n' +
+            '                        <div class="meta-wrap">\n' +
+            '                            <p class="meta">\n' +
+            '                                <span name="date"><i class="icon-calendar mr-2"></i>'+ data["date"]+'</span>\n' +
+            '                                <span class="text-primary" style="font-weight: bold" name="type"><i class="mr-2 "></i>'+ data["genre"][0]["name"]+'</span>\n' +
+            '                            </p>\n' +
+            '                        </div>\n' +
+            '                        <p class="mb-4" name="area">'+ data['description'].slice(0,300)+'. . .</p>\n' +
+            '                        <div class="meta-wrap">\n' +
+            '                            <label class="text-primary" name="status" ></label>\n' +
+            '                            <label style="float: right; display: block" name><i class="fa fa-heart-o" style="font-size:24px;" ></i></label>\n' +
+            '                            <label style="float: right; display: none "><i class="fa fa-heart" style="font-size:24px; color: blueviolet"></i></label>\n' +
+            '\n' +
+            '                        </div>\n' +
+            '                    </div>\n' +
+            '                </div>\n' +
+            '            </div>\n'
+        return html;
+    }
+
+</script>

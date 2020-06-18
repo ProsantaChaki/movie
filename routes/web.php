@@ -16,3 +16,12 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', function () {
     return view('layouts.userLayout');
 });
+
+Route::get('postview/{postId}', function ($postId) {
+    return view('post.singlePostView')->with('postId',$postId);
+
+});
+
+Route::get('film/{slug}', function ($slug) {
+    return view('movie.single_movie')->with('slug',$slug);
+});

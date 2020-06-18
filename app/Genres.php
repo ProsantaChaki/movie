@@ -10,4 +10,7 @@ class Genres extends Model
     protected $fillable = [
         'name',
     ];
+
+
+
 }

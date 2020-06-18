@@ -43,4 +43,7 @@ Route::group([
     ], function() {
         Route::get('user', 'UserController@user');
     });
+
+    Route::get('all/movie','MovieController@getAllMovie');
+
 });
