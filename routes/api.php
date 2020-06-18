@@ -36,4 +36,11 @@ Route::group([
             Route::get('user', 'AuthController@user');
         });
     });
+
+
+    Route::group([
+        'middleware' => 'auth:api'
+    ], function() {
+        Route::get('user', 'UserController@user');
+    });
 });
