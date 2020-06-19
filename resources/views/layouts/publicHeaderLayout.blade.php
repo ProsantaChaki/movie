@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Donor Home</title>
+    <title>Movie</title>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="{{ url('/') }}/css/custom.css">
@@ -47,9 +47,14 @@
 </head>
 <body style="overflow-y: scroll;">
 <nav class=" navbar navbar-inverse navbar-fixed-top " >
-    <div class="container-fluid col-xl-12" style=" alignment: center; max-width: 1000px" >
-        <a class="navbar-brand w3-left" href="{{ url('/') }}/post">Sohozogi</a>
-
+    <div class="container-fluid col-xl-12" style=" alignment: center;"  >
+        <a class="navbar-brand w3-left" href="{{ url('/') }}">Movie</a>
+        <button type="button"  class="navbar-toggle w3-left" data-toggle="collapse" onclick="sideBar()">
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+            <span class="icon-bar"></span>
+        </button>
+        <!--<a class="navbar-brand w3-right sticky-top" style="font-size: 14px" href="#"><span class="glyphicon glyphicon-user"></span> Sign Up</a>-->
         <a class="navbar-brand w3-right sticky-top small" id="loginVisibility" style="font-size: 14px; display: block" data-toggle="modal" data-target="#login" href="#" ><span class="glyphicon glyphicon-log-in"></span> Login</a>
         <!--
         -------------------------------Right side of Menu bar after Login---------------------------------------
@@ -58,11 +63,11 @@
         <ul class="navbar-brand w3-right sticky-top small" id="profileVisibility" style="padding-left: 0px; padding-top: 0px; display: none">
             <div class="user-area dropdown float-right">
                 <a href="#" class="dropdown-toggle active" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <img class="user-avatar rounded-circle" id="profilePhoto" src="#" style="border-radius: 50%; height: 40px" alt="">
+                    <img class="user-avatar rounded-circle" id="profilePhoto" src="" style="border-radius: 50%" alt="User Avatar">
                 </a>
 
                 <div class="user-menu dropdown-menu">
-                    <li> <a class="nav-link" href="{{ url('/') }}/profile"><i class="fa fa- user"></i>My Profile</a></li>
+                    <a class="nav-link" href="{{ url('/') }}/profile"><i class="fa fa- user"></i>My Profile</a>
 
                     <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
@@ -73,6 +78,7 @@
             </div>
         </ul>
 
+
     </div>
 </nav>
 
@@ -80,19 +86,27 @@
 
 @include('user.registration')
 
+@include('user.forgotPassword')
+
+@include('user.passwordReset')
 
 
-<div>
-    @yield('content')
+<div class="w3-content w3-border-left w3-border-right font-normal" style=" font-weight: normal">
+
+
+    <!-- Overlay effect when opening sidebar on small screens -->
+    <div class="w3-overlay w3-hide-large w3-Xlarge" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
+
+    <!-- !PAGE CONTENT! -->
+
+    <div class="w3-main w3-white " style=" padding: 10px; padding-top: 80px">
+        @yield('content')
+
+    </div>
 
 </div>
 <script src="{{ url('/') }}/assets/js/jquery-3.5.1.min.js"></script>
 <script src="{{ url('/') }}/assets/js/bootstrap.4.5.0.min.js"></script>
-
-<script src="{{ url('/') }}/js/staticText.js"></script>
-
-<script src="{{ url('/') }}/js/common.js"></script>
-<script src="{{ url('/') }}/js/userLayout.js"></script>
 
 </body>
 </html>

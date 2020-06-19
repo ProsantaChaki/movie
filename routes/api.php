@@ -42,8 +42,10 @@ Route::group([
         'middleware' => 'auth:api'
     ], function() {
         Route::get('user', 'UserController@user');
+        Route::post('movie/comment','MovieController@saveComment');
     });
 
     Route::get('all/movie','MovieController@getAllMovie');
+    Route::get('movie/{slug}','MovieController@getSingleMovie');
 
 });

@@ -21,16 +21,11 @@ class MovieList extends Model
     ];
 
     public function genre(){
-        //return $this->belongsToMany('App\Genre');
         return $this->belongsToMany('App\Genres', 'movie_genres', 'movie_id', 'genre_id');
-
-        //return $this->hasManyThrough('genre', 'MovieGenres', 'id', 'movie_id');
     }
-    public function slug(){
-        //return $this->belongsToMany('App\Genre');
-        return $this->hasOne('App\Slug', 'movie_id', 'id');
 
-        //return $this->hasManyThrough('genre', 'MovieGenres', 'id', 'movie_id');
+    public function slug(){
+        return $this->hasOne('App\Slug', 'movie_id', 'id');
     }
 
 }
