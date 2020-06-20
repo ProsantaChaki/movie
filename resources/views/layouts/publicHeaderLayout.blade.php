@@ -91,20 +91,9 @@
 @include('user.passwordReset')
 
 
-<div class="w3-content w3-border-left w3-border-right font-normal" style=" font-weight: normal">
+@yield('content')
 
 
-    <!-- Overlay effect when opening sidebar on small screens -->
-    <div class="w3-overlay w3-hide-large w3-Xlarge" onclick="w3_close()" style="cursor:pointer" title="close side menu" id="myOverlay"></div>
-
-    <!-- !PAGE CONTENT! -->
-
-    <div class="w3-main w3-white " style=" padding: 10px; padding-top: 80px">
-        @yield('content')
-
-    </div>
-
-</div>
 <script src="{{ url('/') }}/assets/js/jquery-3.5.1.min.js"></script>
 <script src="{{ url('/') }}/assets/js/bootstrap.4.5.0.min.js"></script>
 

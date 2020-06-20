@@ -43,9 +43,14 @@ Route::group([
     ], function() {
         Route::get('user', 'UserController@user');
         Route::post('movie/comment','MovieController@saveComment');
+        Route::post('movie/create','MovieController@create');
+
     });
 
     Route::get('all/movie','MovieController@getAllMovie');
     Route::get('movie/{slug}','MovieController@getSingleMovie');
+    Route::get('genre','MovieController@getGenre');
+    Route::get('country','MovieController@getCountry');
+
 
 });

@@ -1,82 +1,84 @@
 @extends('layouts.publicHeaderLayout')
 
 @section('content')
-<div class="mt-3" >
-    <div class="row">
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-            <img src="" alt="" class="img-fluid" id="photo">
-            <div class="films_details_jeft mt-3 p-2 mb-2 bg-white text-dark">
-            <span class="">
-                <span class="font-weight-bold">Release: </span> <span id="release"></span>
-            </span>
-                <span class="float-right">
-              <span class="font-weight-bold">Date: </span><span id="date"></span>
-            </span>
-                <br>
-                <span class="">
-              <span class="font-weight-bold">Rating: </span><span id="rating"></span>
-            </span>
-                <span class="float-right">
-              <span class="font-weight-bold" id="ticket"></span>
-            </span>
-            <br>
-            <span class="" id="genre">
-            </span>
-            </div>
-        </div>
-        <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
-            <div class="" style="padding-bottom: 5px">
-                <h4 class="film_name" id="title"></h4>
+    <div class="container" style="background-color: #ffffff; margin-top: 70px";>
 
-                <!--<span class="user_name ml-1">Shourov Dutta Akash</span>-->
-                <span class="float-left badge " id="price"></span>
-                <br>
-            </div>
-            <div class="films_details_right mt-3 text-justify">
-                <p id="description">
-                </p>
-            </div>
-        </div>
-    </div>
-</div>
-
-<div class="mt-5">
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
-            <form>
-                <div class="form-group">
-                    <textarea class="form-control" id="user_comment" name="user_comment" placeholder="Comment" rows="3"></textarea>
+        <div class="mt-3" >
+            <div class="row">
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <img src="" alt="" class="img-fluid" id="photo">
+                    <div class="films_details_jeft mt-3 p-2 mb-2 bg-white text-dark">
+                    <span class="">
+                        <span class="font-weight-bold">Release: </span> <span id="release"></span>
+                    </span>
+                        <span class="float-right">
+                      <span class="font-weight-bold">Date: </span><span id="date"></span>
+                    </span>
+                        <br>
+                        <span class="">
+                      <span class="font-weight-bold">Rating: </span><span id="rating"></span>
+                    </span>
+                        <span class="float-right">
+                      <span class="font-weight-bold" id="ticket"></span>
+                    </span>
+                    <br>
+                    <span class="" id="genre">
+                    </span>
+                    </div>
                 </div>
-                <button class="btn btn-primary" onclick="comment_submit()">Comment</button>
-            </form>
-        </div>
-    </div>
-</div>
+                <div class="col-xl-6 col-lg-6 col-md-6 col-sm-12 col-12">
+                    <div class="" style="padding-bottom: 5px">
+                        <h4 class="film_name" id="title"></h4>
 
-<div class="mt-5 mb-3">
-    <div class="row">
-        <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " id="comments">
-            <!--<div class="shadow-lg p-3 mb-4 bg-white rounded">
-                <img src="assets/picture/men_01.jpg" alt="" class="img-fluid details_user_photos">
-                <span class="ml-2 comment_user_name">mark zuckerberg</span>
-                <p class="ml-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit itaque molestiae possimus, vel id eveniet porro deserunt sapiente delectus minima doloribus reprehenderit officiis incidunt laboriosam, modi aut quia optio explicabo.
-                </p>
+                        <!--<span class="user_name ml-1">Shourov Dutta Akash</span>-->
+                        <span class="float-left badge " id="price"></span>
+                        <br>
+                    </div>
+                    <div class="films_details_right mt-3 text-justify">
+                        <p id="description">
+                        </p>
+                    </div>
+                </div>
             </div>
-            <div class="shadow-lg p-3 mb-4 bg-white rounded">
-                <img src="assets/picture/men_01.jpg" alt="" class="img-fluid details_user_photos">
-                <span class="ml-2 comment_user_name">mark zuckerberg</span>
-                <p class="ml-5">
-                    Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit itaque molestiae possimus, vel id eveniet porro deserunt sapiente delectus minima doloribus reprehenderit officiis incidunt laboriosam, modi aut quia optio explicabo.
-                </p>
-            </div>-->
         </div>
+
+        <div class="mt-5">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12">
+                    <form>
+                        <div class="form-group">
+                            <textarea class="form-control" id="user_comment" name="user_comment" placeholder="Comment" rows="3"></textarea>
+                        </div>
+                        <button class="btn btn-primary" onclick="comment_submit()">Comment</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+
+        <div class="mt-5 mb-3">
+            <div class="row">
+                <div class="col-xl-12 col-lg-12 col-md-12 col-sm-12 " id="comments">
+                    <!--<div class="shadow-lg p-3 mb-4 bg-white rounded">
+                        <img src="assets/picture/men_01.jpg" alt="" class="img-fluid details_user_photos">
+                        <span class="ml-2 comment_user_name">mark zuckerberg</span>
+                        <p class="ml-5">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit itaque molestiae possimus, vel id eveniet porro deserunt sapiente delectus minima doloribus reprehenderit officiis incidunt laboriosam, modi aut quia optio explicabo.
+                        </p>
+                    </div>
+                    <div class="shadow-lg p-3 mb-4 bg-white rounded">
+                        <img src="assets/picture/men_01.jpg" alt="" class="img-fluid details_user_photos">
+                        <span class="ml-2 comment_user_name">mark zuckerberg</span>
+                        <p class="ml-5">
+                            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Impedit itaque molestiae possimus, vel id eveniet porro deserunt sapiente delectus minima doloribus reprehenderit officiis incidunt laboriosam, modi aut quia optio explicabo.
+                        </p>
+                    </div>-->
+                </div>
+            </div>
+        </div>
+
+
+        <input type="hidden" id="slug" value="{{$slug}}">
     </div>
-</div>
-
-
-<input type="hidden" id="slug" value="{{$slug}}">
-
 
 
 <!-- jQuery first, then Popper.js, then Bootstrap JS-->
