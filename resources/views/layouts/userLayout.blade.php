@@ -52,7 +52,7 @@
                 </a>
 
                 <div class="user-menu dropdown-menu">
-                    <a class="nav-link" href="{{ url('/') }}/profile"><i class="fa fa- user"></i>My Profile</a>
+                    <a class="nav-link" href="{{ url('/') }}/film/create"><i class="fa fa- user"></i>Add Movie</a>
 
                     <!-- <a class="nav-link" href="#"><i class="fa fa- user"></i>Notifications <span class="count">13</span></a>
 
@@ -137,18 +137,25 @@
             htmlData = htmlData + htmlPostDataGenerator(data['data']['data'][i])
         }
         //alert(htmlData)
-        var pagination = paginationGenarator(data)
+        var pagination = paginationGenarator(data['data'])
         document.getElementById('posts').innerHTML = htmlData + pagination;
 
     }
 
     function htmlPostDataGenerator(data) {
+        genre=''
+        $.each(data["genre"], function (key, value) {
+            genre += value["name"]+'; ';
+        } )
 
         var html = '<div class="col-md-12 col-sm-12 ftco-animate d-md-flex w3-light-grey" style="margin-bottom: 10px; padding-top: 10px; padding-bottom: 10px" >\n' +
             '                <div  class="col-xl-4 col-lg-4 col-md-4 col-sm-4 " style="alignment: left">\n' +
             '                    <a href="#" class="img img-2">\n' +
-            '                        <img src='+project_url+data["photo"] +' style=" max-width: 200px; max-height:170px;">\n' +
+            '                        <img src='+project_url+data["photo"] +' style=" max-width: 290px; max-height:170px;">\n' +
             '                    </a>\n' +
+            '                            </br><p class="meta">\n' +
+            '                                <span class="text-primary" style="font-weight: bold" name="type"><i class="mr-2 "></i>Rating: '+ data["rating"]+'/5</span>\n' +
+            '                            </p>\n' +
             '                </div>\n' +
             '                <div class="col-xl-8 col-lg-8 col-md-8 col-sm-8" style="alignment: right;">\n' +
             '                    <h4 class="mb-2"><a href="'+project_url+'film/'+ data["slug"]["slug"]+'" name="title">'+ data["name"]+'</a></h4>\n' +
@@ -156,8 +163,9 @@
             '                        <div class="meta-wrap">\n' +
             '                            <p class="meta">\n' +
             '                                <span name="date"><i class="icon-calendar mr-2"></i>'+ data["date"]+'</span>\n' +
-            '                                <span class="text-primary" style="font-weight: bold" name="type"><i class="mr-2 "></i>'+ data["genre"][0]["name"]+'</span>\n' +
+            '                                <span class="text-primary" style="font-weight: bold" name="type"><i class="mr-2 "></i>'+ genre+'</span>\n' +
             '                            </p>\n' +
+
             '                        </div>\n' +
             '                        <p class="mb-4" name="area">'+ data['description'].slice(0,300)+'. . .</p>\n' +
             '                        <div class="meta-wrap">\n' +

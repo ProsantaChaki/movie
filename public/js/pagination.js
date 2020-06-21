@@ -1,12 +1,15 @@
 function paginationGenarator(data) {
     console.log(data)
+    //alert(data['current_page'])
+
+    //alert(data['last_page'])
     var currentPagenumber = data['current_page'];
     var lastPagenumber = data['last_page'];
     var url1= data['first_page_url'];
     var firstPage ='<li class="page-item" ><a class="page-link" onclick= "getPostData(1)">1</a></li>\n';
     var lastPage ='<li class="page-item" ><a class="page-link" onclick= "getPostData('+lastPagenumber+')" >'+lastPagenumber+'</a></li>\n';
     var previousPage ='<li class="page-item"><a class="page-link"  onclick= "getPostData('+(currentPagenumber-1)+')">'+(currentPagenumber-1)+'</a></li>\n';
-    var nextPage ='<li class="page-item" ><a class="page-link" onclick= "getPostData('+(currentPagenumber+1)+')">'+(currentPagenumber+1)+'</a></li>\n';
+    var nextPage = '<li class="page-item" ><a class="page-link" onclick= "getPostData('+(currentPagenumber+1)+')">'+(currentPagenumber+1)+'</a></li>\n';
     var currentPage ='<li class="page-item active"><a class="page-link">'+currentPagenumber+'</a></li>\n';
     var empty = '<li class="page-item" style="border: none;"><a class="page-link" style="border: none; margin: 0px; padding-left: 0px; padding-right: 3px"> . . . . </a></li>\n';
     var htmlBefore ='<div class="col-md-12 col-sm-12 ftco-animate d-md-flex " style="padding-top: 10px; text-align: center;" >\n <ul class="pagination">\n';
@@ -18,13 +21,14 @@ function paginationGenarator(data) {
         htmlRespons = htmlBefore + currentPage + htmlAfter;
     }
     else if(lastPagenumber==2){
+        //alert(2)
 
         if(currentPagenumber == 1){
             htmlRespons = htmlBefore + currentPage + nextPage + htmlAfter;
         }
         else{
-            htmlRespons = htmlBefore + previousPage + currentPage + htmlAfter;
-        }
+                htmlRespons = htmlBefore + previousPage + currentPage + htmlAfter;
+            }
     }
     else if(lastPagenumber==3){
 

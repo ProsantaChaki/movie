@@ -66,10 +66,10 @@ class MovieController extends Controller
                 $attachment = $request->file('img');
                 foreach ($attachment as $key=>$single_attachment){
                     $attachment_name = time().$single_attachment->getClientOriginalName();
-                    $upload_path = 'images/postImage';
+                    $upload_path = 'images/movies';
                     $success=$single_attachment->move($upload_path,$attachment_name);
                     if($success){
-                        $data['photo'] = $attachment_name;
+                        $data['photo'] = 'images/movies/'.$attachment_name;
                         break;
                     }
                 }
@@ -99,12 +99,12 @@ class MovieController extends Controller
                 MovieGenres::create($genreData);
             }
 
-            $slug['slug']= preg_replace("![^a-z0-9]+!i", "-", $postData['name']);
+            $slug['slug']= $respons['id'].'_'.preg_replace("![^a-z0-9]+!i", "-", $postData['name']);
             $slug['movie_id'] = $respons['id'];
             Slug::create($slug);
 
 
-            return response()->json(['message' => 'post without image is submitted','data'=>$respons]);
+            return response()->json(['message' => 'post without image is submitted','data'=>$respons, 'status'=>200]);
         }
         else{
             return $this->postValidator($request);
@@ -115,7 +115,7 @@ class MovieController extends Controller
 
     public function getAllMovie(){
 
-        $film = MovieList::with('genre')->with('slug')->orderBy('id')->paginate(2);
+        $film = MovieList::with('genre')->with('slug')->orderBy('id')->paginate(3);
 
         return response()->json(['message' => 'your request has been processed', 'data' =>  $film]);
     }

@@ -205,9 +205,11 @@ function fileUpload(type, url, data) {
         data: data,
         contentType: false, //THIS IS REQUIRED
         processData: false, //THIS IS REQUIRED
-        success: function(data){
+        success: function(responses){
             //Handle success here
-            return(data);
+            //console.log(data)
+
+            return(responses);
         },
         error: function (xhr, textStatus, error) {
             //Handle error

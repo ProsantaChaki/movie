@@ -18,7 +18,7 @@
 
                                 <div class="col-md-7">
                                     <div class="col-md-4">
-                                        <input type="file" name="img[]" class="file" id="Photo" accept="image/*">
+                                        <input type="file" name="img[]" class="file" id="Photo" accept="image/*" required>
                                     </div>
                                     <div class="col-md-8">
                                         <img src="assets/picture/80x80.png" id="preview" class="img-fluid upload_films_picture float-right" style="height: 100px">
@@ -190,9 +190,32 @@
 
             var url = project_url+"api/v1/movie/create";
             var method= 'POST';
-            var data = data;
-            var request = fileUpload(method, url, data);
-            respons  = JSON.parse(request.response);
+            //var data = data;
+            //var request = fileUpload(method, url, data);
+
+            $.ajax({
+                type: 'POST',
+                url: url,
+                beforeSend: function(request) {
+                    //ADD CUSTOM HEADER HERE
+                    request.setRequestHeader("Authorization", "Bearer " + token);
+                },
+                data: data,
+                contentType: false, //THIS IS REQUIRED
+                processData: false, //THIS IS REQUIRED
+                success: function(responses){
+                    //Handle success here
+                    if(responses.status==200){
+                        alert('Movie Added Successfully')
+                        $("#post_create")[0].reset();
+                        window.location=project_url;
+                    }else  alert('Fill all the information')
+
+                },
+                error: function (xhr, textStatus, error) {
+                    console.log(reject(error))
+                }
+            });
         }
 
 
