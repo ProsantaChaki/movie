@@ -1,0 +1,304 @@
+
+
+#body    {
+    font-family: "apercu", serif;
+    background-color: #F8F9FC;
+    font-size: 14px;
+}
+
+.footer_links    {
+    font-size: 16px;
+    color: #000;
+    text-decoration: none;
+}
+
+.footer_links:hover    {
+    color: #000;
+}
+
+/**************************************
+index page CSS Style Start
+**************************************/
+.card_div    {
+    -webkit-transition: box-shadow .3s;
+    -moz-transition: box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+    -webkit-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -moz-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -o-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    border: 1px solid rgba(255, 255, 255, 0.13);
+    border-radius: 0rem;
+}
+
+.card_description    {
+    color: #515151;
+}
+
+.card_title    {
+    font-family: serif;
+    font-weight: 600;
+    font-size: 18px;
+}
+
+.films_title    {
+    color: #000000;
+    text-decoration: none;    
+}
+
+.films_title:hover    {
+    color: #000000;
+    text-decoration: none;    
+}
+
+.card_text    {
+    font-size: 14px;
+}
+
+@media (min-width: 576px) {
+    .card_text {
+        font-size: 12px;
+    }
+}
+
+@media (min-width: 768px) {
+    .card_text {
+        font-size: 14px;
+    }
+}
+
+.page_link    {
+    padding: 1.1rem 1.9rem;
+    color: #fff;
+    background-color: #000;
+    border: 1px solid #000;
+}
+
+.page_link:hover {
+    z-index: 2;
+    color: #000;
+    text-decoration: none;
+    background-color: #e8e8e8;
+    border-color: #fff;
+}
+
+.page_item.active .page_link {
+    z-index: 3;
+    color: #000;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+.show_more_btn    {
+    color: #000;
+    text-decoration: none;
+    background-color: #fff;
+    border-color: #fff;
+}
+
+@media (min-width: 320px) {
+    .page_link    {
+        padding: .6rem .9rem;
+    }
+}
+
+@media (min-width: 576px) {
+    .page_link {
+        padding: .8rem 1.2rem;
+    }
+}
+
+@media (min-width: 768px) {
+    .page_link {
+        padding: 1.1rem 1.9rem;
+    }
+}
+
+
+.dropbtn {
+    background-color: #fff;
+    color: #000000;
+    font-size: 15px;
+    border: none;
+    cursor: pointer;
+  }
+
+  .login_user_profile_pic    {
+      width: 40px;
+      height: 40px;
+      border-radius: 50px;
+  }
+
+  .login_user_profile_name    {
+    color: #b1b1b1;
+    margin-bottom: 10px;
+    background-color: #e0e0e0;
+  }
+  
+  .dropdown {
+    position: relative;
+    display: inline-block;
+    float: right;
+  }
+  
+  .dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+    left: -113px;
+  }
+  
+  .dropdown-content a {
+    color: black;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+  }
+  
+  .dropdown-content a:hover {
+      background-color: #f1f1f1
+   }
+  
+  .dropdown:hover .dropdown-content {
+    display: block;
+  }
+  
+/**************************************
+index page CSS Style End
+**************************************/
+
+
+/**************************************
+Login, Registration page CSS Style Start
+**************************************/
+.user_login_registration    {
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-transition: box-shadow .3s;
+    -moz-transition: box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+    -webkit-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -moz-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -o-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    box-shadow: 0 3px 25px rgba(2,3,3,.15);
+}
+
+.login_registration_user_input_form    {
+    height: calc(1.5em + .75rem + 14px);
+    background-color: #f9f9f9;
+    border: 1px solid #ffffff;
+    border-radius: 0rem;
+}
+
+.login_registration_user_input_form:focus {
+    background-color: #fff;
+    border-color: #ffffff;
+    box-shadow: 0 0 0 0.2rem rgba(234, 234, 234, 0.25);
+}
+
+.sign_up_btn, .login_btn    {
+    background-color: black;
+    color: #fff;
+}
+
+.sign_up_btn:hover, .login_btn:hover    {
+    background-color: black;
+    color: #fff;
+}
+
+.sign_up_btn.focus, .sign_up_btn:focus, .login_btn.focus, .login_btn:focus {
+    box-shadow: 0 0 0 0.2rem rgba(193, 193, 193, 0.42);
+}
+
+.already_sign_up_text, .don_t_have_account    {
+    color: #495057;
+}
+
+.login_btn_footer, .sign_up_btn_footer   {
+    color: #ff0047;
+    text-decoration: none;
+}
+
+.login_btn_footer:hover, .sign_up_btn_footer:hover   {
+    color: #ff0047;
+    text-decoration: none;
+}
+/**************************************
+Login, Registration page CSS Style Start
+**************************************/
+
+
+/**************************************
+Create Films page CSS Style Start
+**************************************/
+.create_new_films    {
+    background-color: #fff;
+    border-radius: 3px;
+    -webkit-transition: box-shadow .3s;
+    -moz-transition: box-shadow .3s;
+    -o-transition: box-shadow .3s;
+    transition: box-shadow .3s;
+    -webkit-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -moz-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    -o-box-shadow: 0 3px 25px rgba(2,3,3,.15);
+    box-shadow: 0 3px 25px rgba(2,3,3,.15);
+}
+
+.create_new_films_input_form    {
+    height: calc(1.5em + .75rem + 14px);
+    background-color: #f9f9f9;
+    border: 1px solid #ffffff;
+    border-radius: 0rem;
+}
+/**************************************
+Create Films page CSS Style End
+**************************************/
+
+
+/**************************************
+Films Details page CSS Style Start
+**************************************/
+.film_name    {
+    color: #000;
+}
+
+.details_user_photos    {
+    width: 40px;
+    height: 40px;
+    border-radius: 50px;
+}
+
+.user_name    {
+    color: #000;
+}
+
+.user_country {
+    padding: .45em .8em;
+    color: #fff;
+    background-color: #000000;
+    margin-top: 10px;
+}
+
+.comment_user_name    {
+    font-size: 18px;
+    color: #000;
+}
+
+
+.file {
+    visibility: hidden;
+    position: absolute;
+}
+
+.upload_films_picture    {
+    width: 80px;
+    height: 80px;
+}
+/**************************************
+Films Details page CSS Style End
+**************************************/

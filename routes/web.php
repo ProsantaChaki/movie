@@ -14,5 +14,13 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
+    return view('layouts.userLayout');
 });
+
+Route::get('film/{slug}', function ($slug) {
+    if($slug=='create'){
+        return view('movie.create');
+    }else return view('movie.single_movie')->with('slug',$slug);
+});
+
+
