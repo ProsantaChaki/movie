@@ -18,6 +18,9 @@ class DatabaseSeeder extends Seeder
             MovieGenreTableSeeder::class,
             SlugTableSeeder::class,
             UserSeeder::class,
+            CountryTableSeeder::class,
+            CommentTableSeeder::class,
+
         ]);
     }
 }
